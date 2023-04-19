@@ -1,0 +1,26 @@
+version: 0.2
+env:
+  shell: bash
+phases:
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - echo Install build dependencies
+      - node --version
+      - npm install -g npm
+      - npm --version
+  build:
+    on-failure: ABORT
+    commands:
+      - echo Build started on `date`
+      - echo Build project
+      - npm install --force
+      - bash scripts/before_build.sh
+      - npm run build
+  post_build:
+    on-failure: ABORT
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - "**/*"

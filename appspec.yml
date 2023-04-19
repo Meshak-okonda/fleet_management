@@ -1,0 +1,32 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/fleet-management/ssr/admin
+permissions:
+  - object: /home/ubuntu/fleet-management/ssr
+    pattern: "admin"
+    owner: ubuntu
+    group: ubuntu
+    mode: 755
+    type:
+      - directory
+file_exists_behavior: OVERWRITE
+
+hooks:
+  BeforeIntall:
+    - location: scripts/before_install.sh
+      timeout: 3000
+      runas: root
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 3000
+      runas: root
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 3000
+      runas: ubuntu
+  ValidateService:
+    - location: scripts/validate_service.sh
+      timeout: 600
+      runas: ubuntu

@@ -1,0 +1,105 @@
+$yellowColorFirst: #ffbd00;
+$yellowColorSecond: #ffe000;
+$blueColorFirst: #003863;
+$blueColorSecond: #00386377;
+
+$loginBackground: #003863;
+$loginBackgroundSecond: #e1e3e0;
+
+
+.borderError {
+	border: 1px solid red;
+
+	animation: error 0.5s infinite;
+	animation-fill-mode: forwards;
+
+	@keyframes error {
+		0% {
+			border-color: red;
+		}
+		50% {
+			border-color: transparent;
+		}
+		100% {
+			border-color: red;
+		}
+	}
+}
+
+#popover-basic{
+	z-index: 10000 !important;
+}
+
+.toast-container {
+	z-index: 100000 !important;
+	position: fixed !important;
+	top: 20px !important;
+	right: 20px !important;
+}
+
+*::-webkit-scrollbar {
+	height: 5px;
+	width: 6px;
+	margin: 0px;
+	padding: 0px;
+}
+*::-webkit-scrollbar-track {
+	background: $blueColorFirst; /* color of the tracking area */
+}
+*::-webkit-scrollbar-thumb {
+	background-color: $yellowColorFirst; /* color of the scroll thumb */
+	border-radius: 10px;
+	border: 1px solid $yellowColorFirst; /* creates padding around scroll thumb */
+}
+
+*::-moz-scrollbar {
+	height: 5px;
+	width: 6px;
+	margin: 0px;
+	padding: 0px;
+}
+*::-moz-scrollbar-track {
+	background: $blueColorFirst; /* color of the tracking area */
+}
+*::-moz-scrollbar-thumb {
+	background-color: $yellowColorFirst; /* color of the scroll thumb */
+	border-radius: 10px;
+	border: 1px solid $yellowColorFirst; /* creates padding around scroll thumb */
+}
+
+.ril-image-current {
+	& .ril__image {
+		z-index: 214748364 !important;
+	}
+}
+
+.tableScrol{
+	overflow-x: auto !important;
+	overflow-y: auto !important;
+}
+
+.css-153eyq5-MuiModal-root-MuiDialog-root .MuiDialogContent-root{
+	padding: 3% 5% !important;
+}
+
+.disabled{
+	pointer-events: none !important;
+	// border: 1px solid #c6c0c0 !important;
+  	background-color: #7b7b7b48 !important;
+  	& *{
+		  color: #6d6d6de7 !important;
+	  }
+}
+
+.ReactModalPortal{
+	z-index: 100000 !important;
+}
+
+.popover-body{
+	height: min-content !important;
+}
+
+
+// body li.MuiListItem-root.MuiListItem-padding.css-1inudar-MuiListItem-root{
+//   display: none;
+// }
